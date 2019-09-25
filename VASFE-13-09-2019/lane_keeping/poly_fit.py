@@ -138,4 +138,4 @@ def main(img, DEBUG):
         plt.imshow(out_img)
         plt.show()
     
-    return left_fit, right_fit
+    return left_fit, right_fit, ploty

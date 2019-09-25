@@ -51,14 +51,15 @@ def color_threshold(img):
 
 def perspective_warp(img):
     # Modify perspective (bird-eye view)
-    pts1 = np.float32([[926, 383], [1061, 385], [536, 642], [1367, 695]])
+    pts1 = np.float32([[889, 561], [1192, 561], [267, 903], [1598, 903]])
     pts2 = np.float32([[0, 0], [1920, 0], [0, 1080], [1920, 1080]])
     M = cv2.getPerspectiveTransform(pts1, pts2)
     dst = cv2.warpPerspective(img, M, (1920, 1080))
     return dst
 
 def main(img, DEBUG):
-    undistorted_img = camera_calibration(img)
+    # undistorted_img = camera_calibration(img)
+    undistorted_img = img
     blur_img = blur(undistorted_img)
     hls_img = hls(blur_img)
     x_threshold_gradient_img = x_threshold_gradient(hls_img)
