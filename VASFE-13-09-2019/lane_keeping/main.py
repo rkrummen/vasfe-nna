@@ -6,5 +6,5 @@ from lane_keeping.find_curvature import main as find_curvature
 
 def main(img, DEBUG):
     left_fit, right_fit, plot_y = poly_fit(img, DEBUG)
-    find_curvature(left_fit, right_fit, plot_y, DEBUG)
-    return left_fit, right_fit
+    left_curverad, right_curverad = find_curvature(left_fit, right_fit, plot_y, DEBUG)
+    return left_fit, right_fit, left_curverad, right_curverad

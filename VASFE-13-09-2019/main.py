@@ -11,7 +11,7 @@ def main():
     img = mpimg.imread('car_img_uem.jpg')
     processed_img = pre_processing(img, DEBUG=True)
     #Returns left and right lane fitted polynomials
-    left_fit, right_fit = lane_keeping(processed_img, DEBUG=True)
+    left_fit, right_fit, left_curverad, right_curverad = lane_keeping(processed_img, DEBUG=True)
     return 0
 
 if __name__ == '__main__':
